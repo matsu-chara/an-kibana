@@ -1,0 +1,9 @@
+---
+- name: get kibana
+  get_url: url=https://download.elasticsearch.org/kibana/kibana/kibana-{{version}}.tar.gz dest={{ src }}
+
+- name: unarchive source
+  command: tar zxvf kibana-{{ version }}.tar.gz chdir={{ src }} creates={{ src }}/kibana-{{ version }}
+
+- name: allocate kibana
+  file: src={{ src }}/kibana-{{ version }} dest=/var/www/html/kibana state=link

@@ -13,5 +13,5 @@
   notify: restart fluentd
 
 - name: allocate conf
-  template: src=td-agent.conf dest=/etc/fluent/
+  template: src=td-agent.conf dest=/etc/td-agent/
   notify: restart fluentd
