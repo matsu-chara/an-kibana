@@ -10,3 +10,8 @@
   gem: name=fluent-plugin-{{ item }} state=present executable=/usr/lib64/fluent/ruby/bin/fluent-gem
   with_items:
    - elasticsearch
+  notify: restart fluentd
+
+- name: allocate conf
+  template: src=td-agent.conf dest=/etc/fluent/
+  notify: restart fluentd
