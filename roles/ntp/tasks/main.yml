@@ -1,5 +1,5 @@
 ---
-- name: install ntp
+- name: install
   yum: name=ntp state=present
 
 - name: allocate conf

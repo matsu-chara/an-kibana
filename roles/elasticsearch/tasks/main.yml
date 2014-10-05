@@ -2,12 +2,12 @@
 - name: install dependency(java)
   yum: name=java-1.7.0-openjdk state=present
 
-- name: install the elasticsearch gpg key
+- name: install gpg key
   rpm_key: key=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
 
-- name: set elasticsearch.repo
+- name: set repo
   template: src=elasticsearch.repo dest=/etc/yum.repos.d/
 
-- name: install elasticsearch
+- name: install
   yum: name=elasticsearch state=present
   notify: restart elasticsearch
