@@ -4,4 +4,4 @@
   # user: vagrant
   sudo : yes
   roles:
-    # - elasticsearch
+    - elasticsearch
