@@ -1,0 +1,7 @@
+---
+- name: install kibana systems
+  hosts: all
+  # user: vagrant
+  sudo : yes
+  roles:
+    # - elasticsearch
