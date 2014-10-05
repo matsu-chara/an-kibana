@@ -1,4 +1,10 @@
 ---
+- name: install ntp
+  yum: name=ntp sate=present
+
+- name: install the elasticsearch gpg key
+  rpm_key: key=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
+
 - name: install nginx repo
   yum: name=http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm state=present
 

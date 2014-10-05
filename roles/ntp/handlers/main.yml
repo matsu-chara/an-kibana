@@ -1,0 +1,7 @@
+---
+- name: config current time
+  command: ntpdate ntp.nict.jp
+  notify: restart ntp
+
+- name: restart ntp
+  service: name=ntpd state=started enabled=yes

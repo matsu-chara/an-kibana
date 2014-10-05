@@ -1,0 +1,7 @@
+---
+- name: install ntp
+  yum: name=ntp state=present
+
+- name: allocate conf
+  copy: src=ntp.conf dest=/etc/
+  notify: config current time

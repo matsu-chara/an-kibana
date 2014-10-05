@@ -4,4 +4,6 @@
   # user: vagrant
   sudo : yes
   roles:
-    - elasticsearch
+    - ntp
+    # - elasticsearch
+    # - fluentd
