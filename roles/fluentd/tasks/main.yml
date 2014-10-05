@@ -1,7 +1,8 @@
 ---
-- name: install
+- name: install (+ plugins)
   shell: |
     curl -L http://toolbelt.treasuredata.com/sh/install-redhat.sh | sh
+    /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-elasticsearch
   args:
     creates: /etc/yum.repos.d/td.repo
   notify: restart fluentd
